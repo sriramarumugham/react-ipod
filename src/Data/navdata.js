@@ -1,3 +1,5 @@
+  //data for navbar
+  
   const  navdata = [
   {
     type: "nav", title:"Menu" ,

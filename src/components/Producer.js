@@ -3,10 +3,11 @@ import { useDisplay } from '../Provider';
 import  style from '../styles/producer.module.css';
 
 export default function Producer(props) {
+   
+   //export the menu button based on the props from navbar;
 
-  const data=props.data;
-  const index=props.index;
-
+    const data=props.data;
+    const index=props.index;
     const isActive=props.isActive;
 
     const display=useDisplay();

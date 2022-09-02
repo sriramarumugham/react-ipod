@@ -4,11 +4,9 @@ import Navbar from './Navbar';
 
 export default function () {
   return (
-   
 
-    <div className={styles.display}>
-  
+     <div className={styles.display}>
        <Navbar />
-    </div>
+      </div>
   )
 }

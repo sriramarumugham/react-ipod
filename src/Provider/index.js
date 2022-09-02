@@ -2,9 +2,15 @@ import {  useState , useContext } from "react";
 import {DisplayContext} from './displayProvider';
 import { songsdata } from "../Data/music";
 
+
+
+//cutom hook
 export const useDisplay=()=>{
       return useContext(DisplayContext);
 }
+
+//global state  to manage the state and change the state;
+
 const DisplayState = () => {
 
   const [history, setHistory] = useState([]);
@@ -14,13 +20,13 @@ const DisplayState = () => {
   const [click ,setClick] =useState(false);
   const [activeElement , setActiveElement]=useState();
   const [activeIndex , setactiveIndex]=useState();
-
   const [songs, setSongs] = useState(songsdata);
   const [isplaying, setisplaying] = useState(false);
   const [mindex , setmIndex] =useState(0)
   const [currentSong, setCurrentSong] = useState(songs[index]);
  
 
+  //to change the songs nav
   const next=()=>{
     console.log("hey")
     if(mindex<songs.length-1){
@@ -59,8 +65,7 @@ const DisplayState = () => {
    
   }
 
-// songs, setSongs , isplaying , setisplaying , mindex , setmIndex , currentSong , setCurrentSong
-
+  //to chagne the display ui
   const Changedisplay = (value , historyindex) => {
     const newHistory=history;
     newHistory.push(historyindex);
@@ -77,19 +82,24 @@ const DisplayState = () => {
   }
    
   };
+
   const goTomenu=()=>{
     setIndex(0);
     setHistory([]);
   }
+
+//to chang the active button based on zingtouc
   const changeLimit=(value)=>{
      setLimit(value);
   }
+
   const changeActiveUp=()=>{
      if(active<limit-1 && active >=0){
       setActive(active+1)
      }
      else{setActive(0)}
   }
+
   const changeActiveDown=()=>{
     if(active>0){
       setActive(active-1)
@@ -97,9 +107,13 @@ const DisplayState = () => {
      else{setActive(limit-1)}
 
  }
+
+ //select button state
+ 
  const requestClick=()=>{
     setClick(!click);
  }
+
   return {
 songs, setSongs , isplaying , setisplaying , mindex , setmIndex , currentSong , setCurrentSong ,
 activeElement,activeIndex, prev , next ,

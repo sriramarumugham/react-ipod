@@ -10,24 +10,21 @@ import { useState } from "react";
 export default function Navbar() {
   
   const { index , changeLimit  , limit  , active} = useDisplay();
-  
+
+  //navbar check the type of the  data user clicks and navigate to the array[index] based on the value of the button
 
   if (navdata[index].type === "nav") {
-    console.log(active);
-    
-    changeLimit ( navdata[index].data.length);
-    
+
+    changeLimit ( navdata[index].data.length); 
+
     return (
 
       <div className={styles.navbar}>
         <h4 style={{ margin: "0px" }}> {navdata[index].title}</h4>
-        
         {navdata[index].data.map((d, i) => {
           const isActive=active==i;
-       
-          return <Producer data={d} index={index}  isActive={isActive} />;
+          return <Producer data={d} index={index}  isActive={isActive}  key={i}/>;
         })}
-        
       </div>
 
     );
