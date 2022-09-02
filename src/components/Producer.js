@@ -22,3 +22,6 @@ export default function Producer(props) {
      onClick={(e)=>{display.Changedisplay(data.value , index)}}>{data.name}</button>
   )
 }
+
+
+

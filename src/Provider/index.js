@@ -1,5 +1,6 @@
 import {  useState , useContext } from "react";
 import {DisplayContext} from './displayProvider';
+import { songsdata } from "../Data/music";
 
 export const useDisplay=()=>{
       return useContext(DisplayContext);
@@ -13,6 +14,52 @@ const DisplayState = () => {
   const [click ,setClick] =useState(false);
   const [activeElement , setActiveElement]=useState();
   const [activeIndex , setactiveIndex]=useState();
+
+  const [songs, setSongs] = useState(songsdata);
+  const [isplaying, setisplaying] = useState(false);
+  const [mindex , setmIndex] =useState(0)
+  const [currentSong, setCurrentSong] = useState(songs[index]);
+ 
+
+  const next=()=>{
+    console.log("hey")
+    if(mindex<songs.length-1){
+      setmIndex(mindex+1);
+      setCurrentSong(songs[mindex]);
+      currentSong.progress =0;
+      setisplaying(false);
+      
+    }
+    else{
+      setmIndex(0)
+      setCurrentSong(songs[mindex]);
+      currentSong.progress =0;
+      setisplaying(false);
+    }
+   
+
+  }
+
+  const prev=()=>{
+    console.log("hey")
+    if(mindex==0){
+      setmIndex(songs.length-1);
+      setCurrentSong(songs[mindex])
+      currentSong.progress =0;
+      setisplaying(false);
+      
+    }
+    else{
+      setmIndex(mindex-1);
+      setCurrentSong(songs[mindex])
+      currentSong.progress =0;
+      setisplaying(false);
+  
+    }
+   
+  }
+
+// songs, setSongs , isplaying , setisplaying , mindex , setmIndex , currentSong , setCurrentSong
 
   const Changedisplay = (value , historyindex) => {
     const newHistory=history;
@@ -54,7 +101,8 @@ const DisplayState = () => {
     setClick(!click);
  }
   return {
-    activeElement,activeIndex,
+songs, setSongs , isplaying , setisplaying , mindex , setmIndex , currentSong , setCurrentSong ,
+activeElement,activeIndex, prev , next ,
   setActiveElement, setactiveIndex , goBack , index, goTomenu , Changedisplay , changeLimit , limit , active , changeActiveUp , changeActiveDown,
   };
 };

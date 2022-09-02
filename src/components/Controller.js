@@ -26,7 +26,7 @@ const {changeActiveUp  ,changeActiveDown ,  activeElement ,activeIndex }=display
         const distanceFromOrigin = Math.floor(e.detail.distanceFromOrigin);
 
         if (angle <= 180 && angle >= 0) {
-          if (angle % 15 == 0) {
+          if (angle % 5 == 0) {
             if (distanceFromLast > 0) {
               console.log("up");
                changeActiveUp();
@@ -40,7 +40,7 @@ const {changeActiveUp  ,changeActiveDown ,  activeElement ,activeIndex }=display
           }
         }
       },
-      true
+      false
     );
     // const unbind=()=>{
     //  zt.unbind(myElement, 'rotate');
@@ -52,18 +52,21 @@ const {changeActiveUp  ,changeActiveDown ,  activeElement ,activeIndex }=display
       <div id="Controller" className={style.contollcontainer} draggable={false}>
         <div className={style.row}>
         
-         <button className= {style.button} >  <i class="fa-solid fa-angle-left"></i></button>
-         <button className= {style.button} >  <i class="fa-solid fa-chevron-right"></i></button>
+        
+
+         <button className= {style.button} onClick={display.prev} >  <i class="fa-solid fa-angle-left"></i></button>
+         <button className= {style.button}  onClick={display.next} >  <i class="fa-solid fa-chevron-right"></i></button>
       
         </div>
         <div className={style.column}>
-          <button  className= {style.button} onClick={display.goTomenu}><i class="fa-solid fa-bars"></i></button>
+          <button  className= {style.button} onClick={display.goTomenu }><i class="fa-solid fa-bars"></i></button>
           <button   className= {style.button}  onClick={display.goBack}><i class="fa-solid fa-backward-step"></i> </button>
         </div>
-        <button className={style.select} onClick={(e)=>{display.Changedisplay( activeElement , activeIndex)}} ><i class="fa-solid fa-play"></i> </button>
+        <button className={style.select} onClick={(e)=>{display.Changedisplay( activeElement , activeIndex); display.setisplaying(!display.isplaying) }} ><i class="fa-solid fa-play"></i> </button>
       </div>
     </div>
   );
 };
 export default Controller;
+{/* <button onClick={() => {setisplaying(!isplaying);}}>play</button>    */}
 // display.Changedisplay( activeElement , activeIndex)
