@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  /* border:1px solid red; */
+  height:400px;
+  width: 220px;
+  margin-top: 10vh;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent url("https://s.cdpn.io/6859/iphone.png") no-repeat center center;
+  border-color: #eeebf0;
+  background: #CDD0D5;
+  box-shadow: inset #3D3E42 0 0 15px 9px;
+}
+body{
+  /* border:1px solid red; */
+  /* width:280px;
+  margin:auto;
+  padding:5px;
+  border-radius: 10px;
+  background: transparent url("https://s.cdpn.io/6859/iphone.png") no-repeat center center;
+  background: transparent url("https://s.cdpn.io/6859/suggest.png") no-repeat center center;
+  background-color: #eeebf0;
+ */
+ transition: 1s;
+
+}

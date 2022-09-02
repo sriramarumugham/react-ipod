@@ -1,0 +1,7 @@
+.display{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    background: -webkit-linear-gradient(32deg,#666,#000,#666);
+   border-radius: 2px ;
+}

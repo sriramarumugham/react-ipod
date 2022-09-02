@@ -1,0 +1,106 @@
+
+.musicSession{
+    height: 100%;
+    width: 100%;
+  
+    margin:0px;
+    padding:0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* border:5px solid red; */
+  }
+  .songCover{
+    margin:0px;
+    padding:0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* border:3px solid yellow; */
+  
+  }
+  .songName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:2px;
+    left:2px;
+    /* border:1px solid red; */
+    height: 1.5rem;
+  }
+  .songImgae{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    border:0px;
+    margin:0px;
+    padding:0px;
+    /* border:1px solid yellow; */
+  }
+  .songImgae>img{
+    width: 100%;
+    height: 100%;
+    border:0px;
+    margin:0px;
+    /* background-color: rgb(224, 110, 110); */
+  }
+  .songControlls{
+    position: absolute;
+    top:70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    height: 30%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    /* background-color: aqua; */
+  
+  }
+  .pausePlay{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .songLength{
+    width: 80%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    border:1px solid black;
+    height: 1px;
+    background-color: black;
+    position: relative;
+   
+  
+  }
+  .lengthContainer{
+   
+    height: 1px;
+    background: rgb(221, 225, 212);
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin: 0px;
+    padding: 1px;
+  
+  }
+  .playerHead{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: rgb(21, 19, 19);
+    left:0px;
+  
+  }
+  
+  
