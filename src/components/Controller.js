@@ -5,11 +5,11 @@ import ZingTouch from "zingtouch";
 
 //wheel controll compponent
 const Controller = () => {
-
-   //custom hook
+  //custom hook
   const display = useDisplay();
 
-  const { changeActiveUp, changeActiveDown, activeElement, activeIndex } =  display;
+  const { changeActiveUp, changeActiveDown, activeElement, activeIndex } =
+    display;
 
   useEffect(() => {
     //zintouch config
@@ -17,42 +17,50 @@ const Controller = () => {
     var zt = new ZingTouch.Region(document.body);
     var myElement = document.getElementById("Controller");
 
-    zt.bind(  myElement,"rotate", function (e) {
-
+    zt.bind(
+      myElement,
+      "rotate",
+      function (e) {
         const angle = Math.floor(e.detail.angle);
 
         const distanceFromLast = Math.floor(e.detail.distanceFromLast);
 
         if (angle <= 180 && angle >= 0) {
+          // if (angle % 5 == 0) {
 
-          if (angle % 5 == 0) {
+          //   if (distanceFromLast > 0) {
 
-            if (distanceFromLast > 0) {
+          //     console.log("up");
+          //     changeActiveUp();
 
-             
-              console.log("up");
-              changeActiveUp();
+          //   }
+          //   if (distanceFromLast < 0) {
 
-            }
-            if (distanceFromLast < 0) {
+          //     console.log("down");
+          //     return changeActiveDown();
 
-              console.log("down");
-              return changeActiveDown();
-
-            }
+          //   }
+          // }
+          if (angle < 180 && angle > 120) {
+            console.log("up 1");
+            changeActiveUp();
+          } else if (angle < 120 && angle > 60) {
+            changeActiveUp();
+            console.log("up 2");
+          } else if (angle < 60 && angle > 0) {
+            changeActiveUp();
+            console.log("up 3");
           }
         }
       },
       false
     );
-        
   });
- //controll wheel ui
+  //controll wheel ui
   return (
     <div>
       <div id="Controller" className={style.contollcontainer} draggable={false}>
         <div className={style.row}>
-
           <button className={style.button} onClick={display.prev}>
             {" "}
             <i class="fa-solid fa-angle-left"></i>
@@ -61,17 +69,14 @@ const Controller = () => {
             {" "}
             <i class="fa-solid fa-chevron-right"></i>
           </button>
-
         </div>
         <div className={style.column}>
-
           <button className={style.button} onClick={display.goTomenu}>
             <i class="fa-solid fa-bars"></i>
           </button>
           <button className={style.button} onClick={display.goBack}>
             <i class="fa-solid fa-backward-step"></i>{" "}
           </button>
-
         </div>
 
         <button
@@ -83,7 +88,6 @@ const Controller = () => {
         >
           <i class="fa-solid fa-play"></i>{" "}
         </button>
-
       </div>
     </div>
   );
